@@ -7,6 +7,12 @@
         <a-scene       vr-mode-ui="enabled: false"
         embedded
         arjs="sourceType: webcam; debugUIEnabled: false;">
+        <a-text
+        value="Hello World"
+        look-at="[gps-camera]"
+        scale="40 40 40"
+        gps-entity-place="latitude: 43.603956; longitude: -116.202579;"
+      ></a-text>
         <a-marker preset="hiro">
           <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
           <a-entity
@@ -17,12 +23,7 @@
           ></a-entity>
       </a-marker>
 
-        <a-text
-        value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        gps-entity-place="latitude: 43.603956; longitude: -116.202579;"
-      ></a-text>
+
       <a-camera gps-camera rotation-reader> </a-camera>
         </a-scene>
     </body>
