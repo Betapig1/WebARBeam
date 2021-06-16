@@ -1,30 +1,18 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>GeoAR.js demo</title>
-
-    <!-- import aframe and AR.js -->
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-</head>
-
-
-
-
-<body style='margin: 0; overflow: hidden;'>
-
+    <head>
+        <title>AR.js Basic Projected Camera Example</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <!-- Look-at component. We don't need this now, but we will later. -->
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    </head>
+    <body>
     <a-scene
-        cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
-        raycaster="objects: [gps-entity-place];"
         vr-mode-ui="enabled: false"
-		embedded
-		arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-
-<a-gltf-model src="./Assets/magnemite/scene.gltf" scale="0.15 0.15 0.15" gps-entity-place="longitude: -116.202753; latitude: 43.603484;" animation-mixer/>
-<a-camera gps-camera="positionMinAccuracy:20; gpsTimeInterval:0;" rotation-reader>
-</a-camera>
-	</a-scene>
-</body>
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
+        renderer='antialias: true; alpha: true'>
+            <a-camera gps-projected-camera rotation-reader></a-camera>
+            <a-box gps-projected-entity-place='latitude: 43.603862; longitude: -116.203022' material='color: red' scale='10 10 10'></a-box>
+        </a-scene>
+    </body>
+</html>
