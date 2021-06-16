@@ -23,7 +23,7 @@
 <script src="./places.js"></script>
 
 <body style='margin: 0; overflow: hidden;'>
-  <a-camera gps-camera="positionMinAccuracy:20; gpsTimeInterval:0;" rotation-reader>
+
     <a-scene
         cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
         raycaster="objects: [gps-entity-place];"
@@ -31,7 +31,7 @@
 		embedded
 		arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
 <a-gltf-model src="./Assets/magnemite/scene.gltf" scale="0.15 0.15 0.15" gps-entity-place="longitude: -116.202753; latitude: 43.603484;" animation-mixer>/a-gltf-model>
-        
+  <a-camera gps-camera="positionMinAccuracy:20; gpsTimeInterval:0;" rotation-reader>
 		</a-camera>
 	</a-scene>
 </body>
